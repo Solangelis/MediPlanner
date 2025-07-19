@@ -27,7 +27,7 @@ public class PacienteService {
     }
 
 
-    public boolean existeCpf(String cpf) {
+    public boolean existsCpf(String cpf) {
         return repository.existsByCpf(cpf);
     }
 }
