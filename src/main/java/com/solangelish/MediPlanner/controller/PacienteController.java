@@ -2,6 +2,7 @@ package com.solangelish.MediPlanner.controller;
 
 import com.solangelish.MediPlanner.model.Paciente;
 import com.solangelish.MediPlanner.service.PacienteService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +21,7 @@ public class PacienteController {
 
 
     @PostMapping
-    public ResponseEntity<Paciente> criarPaciente(@RequestBody Paciente paciente) {
+    public ResponseEntity<Paciente> criarPaciente(@RequestBody @Valid Paciente paciente) {
         return ResponseEntity.ok(service.salvar(paciente));
     }
 

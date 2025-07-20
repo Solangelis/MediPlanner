@@ -18,9 +18,12 @@ public class PacienteService {
 
 
     public Paciente salvar(Paciente paciente) {
+        if (repository.existsByCpf(paciente.getCpf())) {
+            throw new IllegalArgumentException("CPF já cadastrado");
+        }
+
         return repository.save(paciente);
     }
-
 
     public List<Paciente> listarTodos() {
         return repository.findAll();
