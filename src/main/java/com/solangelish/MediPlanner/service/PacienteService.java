@@ -18,7 +18,7 @@ public class PacienteService {
 
 
     public Paciente salvar(Paciente paciente) {
-        if (repository.existsByCpf(paciente.getCpf())) {
+        if (existsCpf(paciente.getCpf())) {
             throw new IllegalArgumentException("CPF já cadastrado");
         }
 
